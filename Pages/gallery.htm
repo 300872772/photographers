@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Photo Gallery </title>
+<meta charset="UTF-8">
+
+	<style>
+@import "compass/css3";
+
+$n: 16; // number of lights
+$m: 8; // number of graphical loops
+$d: .75em; // dot diam
+$r: 40em; // loop elongation
+
+
+html {
+    overflow-y: scroll;
+}
+
+
+		body{
+  
+  		height:100%;
+		width:100%;
+  		background-color:  #E8E6E7;
+  		color: #000000;
+		//padding-top:20px;
+		//padding-left:20px;
+		background:#E8E6E7;
+   		background-repeat: no-repeat;
+     		background-attachment: fixed;
+     		
+		
+		}
+		#wripper
+		{
+  
+  		height:100%;
+		width:1024px;
+  		background-color:  #E8E6E7;
+  		color: #000000;
+		margin:auto;
+		//box-shadow: 5px 7px 2px 5px blue;
+		background:White;
+   		background-repeat: no-repeat;
+     		background-attachment: fixed;
+     		border-left: 1px solid black;
+		border-right: 1px solid black;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		-moz-boarder-radius: 20px;
+    		-webkit-boarder-radius: 20px;
+    		border-radius: 20px;
+    		overflow: hidden;
+		padding-top:4px;		
+		}
+
+		#banner
+		{
+    		width: 1015px;
+		height:180px;
+    		margin: auto;
+		padding-top:0px;
+    		background-color: White;
+    		-moz-boarder-radius: 20px;
+    		-webkit-boarder-radius: 20px;
+    		border-radius: 20px;
+    		overflow: hidden;
+		}
+
+#nevigation
+{
+    padding-left: 5px;
+    margin: auto;
+
+}
+
+#nav
+{
+    display: block;
+    list-style: none;
+    text-align: center;
+    width: 974px;    
+    background: -webkit-gradient(linear, right top, left top, color-stop(0%,rgba(128, 212, 255, 0.99)), color-stop(100%,     #006666));
+    background: linear-gradient(to top, rgba(128, 212, 255, 0.99),  #006666);
+    color:#2aa925;
+    		-moz-boarder-radius: 20px;
+    		-webkit-boarder-radius: 20px;
+    		border-radius: 20px;
+    		overflow: hidden;
+	
+}
+
+#nav ul
+{
+    display: none;
+    list-style: none;
+
+        
+}
+
+
+
+#nav a:link , #nav a:visited , #nav a:active
+{
+    display: block;
+    color: white;
+    text-decoration: none;
+
+
+}
+
+#nav a:hover
+{
+    color: #660066;
+}   
+ 
+
+
+
+#nav li 
+{
+    color: red;
+    float: left;
+    font-family: Arial;
+    font-size: 15px;
+    text-align: center;
+    display: block;
+    margin-top: 01px;
+    text-transform: uppercase;
+    padding: 0px 25px 0px 25px;
+    border-left: 1px solid #ffffff;
+	
+}
+
+#menu {
+
+    width: 180px;
+    margin-top:5px;
+    background-color:white;
+	
+}
+
+#menu ul {
+
+    list-style: none;
+    padding-left: 3px;
+}
+#menu ul li {
+    
+    margin-top:5px;
+    font-size: 13px;
+   
+    font-family: Tahoma;
+    background: -webkit-gradient(linear, right top, left top, color-stop(0%,#f6a005), color-stop(100%,#6f6b6b));
+    background: linear-gradient(to top, #f6a005, #6f6b6b);
+    width:120px;
+    
+    padding-top:2px;
+    padding-bottom:2px;
+    border-radius: 0px 20px 20px 0px;
+    padding-left: 10px;
+    box-shadow: 5px  0px 10px #939393;
+    -webkit-transition: padding-left 0.6s;
+-webkit-transform:matrix(.759,-0.5,0.5,.759,0,0); 
+  transform:matrix(.759,-0.5,0.5,.759,,0);  
+    
+}
+#menu a:link , #menu a:visited , #menu a:active
+{
+    display: block;
+    color: White;
+    text-decoration: none;
+
+}
+
+#menu ul li:hover {
+
+    padding-left: 50px;
+    background: -webkit-gradient(linear, right top, left top, color-stop(0%,green), color-stop(100%,#6f6b6b));
+    background: linear-gradient(to top, green, #6f6b6b);
+}
+
+#table2
+{
+//border-left: 1px solid red;
+}
+
+		#menuContainer {
+		margin-top:15px;	
+	 	width:150px;
+   		height:100%;
+		}
+		#menuContainer1 {
+		margin-top:15px;	
+	 	width:150px;
+   		height:100%;
+    opacity: 0.6;
+     filter: alpha(opacity=60);
+		}
+
+		#container {
+		margin:auto;
+   		width:203px;
+   		height:137px;
+     		border-left: 1px solid white;
+		border-right: 1px solid white;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+ 		border-radius: 0px 20px 0px 20px;
+transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+-webkit-transform:matrix(0.866,0.5,-0.5,0.866,0,0);
+    		
+    		box-shadow: 5px  0px 10px #939393;
+		}
+		#container:hover {
+		border-left: 1px solid red;
+		border-right: 1px solid red;
+		border-top: 1px solid red;
+		border-bottom: 1px solid red;
+		border-radius: 0px 20px 0px 20px red;
+		box-shadow: 5px  0px 10px #e39393;
+    opacity: 0.8;
+     filter: alpha(opacity=80);
+		}
+
+		footer {
+		margin:auto;
+		text-align: center;
+		font-size: small;	   	
+   		left:0px;
+   		bottom:0px;
+   		height:20px;
+   		width:950px;
+   		background:white;
+		}
+	</style>
+
+</head>
+
+
+<body>
+<div id="wripper">
+<header>
+<div id="banner">
+<img src="../Pic/banner.jpg" width="1000px" height="180" >
+</div>
+	
+
+
+	    		<div id="nevigation">
+        		<ul  id="nav">
+
+        		<li>
+			<a href="../Index.htm"><h3 id="rotate">Home</h3></a>
+			</li>
+
+			<li>	
+			<a href="gallery.htm"><h3 id="rotate">Gallery</h3></a>
+			</li>
+
+			<li>						
+			<a href="rate.htm"><h3 id="rotate">Rate</h3></a>
+			</li>
+
+			<li>			
+			 <a href="aboutUs.htm"><h3 id="rotate">About Us</h3></a>
+			
+			</li>
+			<li>			
+			 <a href="forms.htm"><h3 id="rotate">Form</h3></a>
+			
+			</li>
+
+			<li>
+
+			 <a href="contact.htm"><h3 id="rotate">Contact</h3></a>
+			</li>
+
+
+			</ul>
+			</div>
+
+<table  width="1024px">
+
+		
+		<tr>
+
+			<td>
+			</td>
+
+		</tr>
+		
+	</table>
+</header>
+		
+
+
+<table  id="table2" width="1024px">
+	<tr height="600px" >
+		<td  id="menuContainer" valign="top">
+	    		<div id="menu">
+        		<ul>
+
+        		<li>
+			<a href="gallery.htm"><h3 id="rotate">ALL</h3></a>
+			</li>
+
+			<li>	
+			<a href="flower.htm"><h3 id="rotate">FLOWER</h3></a>
+			</li>
+
+			<li>						
+			<a href="landscape.htm"><h3 id="rotate">LANDSCAPE</h3></a>
+			</li>
+
+			<li>			
+			 <a href="macro.htm"><h3 id="rotate">MACRO</h3></a>
+			
+			</li>
+
+			<li>
+
+			 <a href="others.htm"><h3 id="rotate">OTHERS</h3></a>
+			</li>
+			</ul>
+			</div>
+		</td>
+		<td>
+			<table >
+				<tr>
+					<td >
+					<a href="f1.htm"><img src="../Pic/tnimg/f1.jpg" id="container"> </a>
+					</td>
+										<td >
+					<a href="f2.htm"><img src="../Pic/tnimg/f2.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="f3.htm"><img src="../Pic/tnimg/f3.jpg" id="container"> </a>
+					</td>
+
+
+				</tr>
+				<tr>
+					<td >
+					<a href="l1.htm"><img src="../Pic/tnimg/l1.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="l2.htm"><img src="../Pic/tnimg/l2.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="l3.htm"><img src="../Pic/tnimg/l3.jpg" id="container"> </a>
+					</td>
+
+				</tr>
+				<tr>
+					<td >
+					<a href="m1.htm"><img src="../Pic/tnimg/m1.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="m2.htm"><img src="../Pic/tnimg/m2.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="m3.htm"><img src="../Pic/tnimg/m3.jpg" id="container"> </a>
+					</td>
+
+				</tr>
+				<tr>
+					<td >
+					<a href="o1.htm"><img src="../Pic/tnimg/o1.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="o2.htm"><img src="../Pic/tnimg/o2.jpg" id="container"> </a>
+					</td>
+					<td >
+					<a href="o3.htm"><img src="../Pic/tnimg/o3.jpg" id="container"></a> 
+					</td>
+
+				</tr>
+			</table>
+		</td>
+		<td id="menuContainer1">
+		<img src="../Pic/rightbannaer.jpg" >
+		</td>
+		
+	</tr>
+
+
+</table>
+
+
+
+<footer>
+	Copyright &copy; 2016  Md Mamunur Rahman 
+</footer>
+
+</div>
+</body>
+
+</html>
